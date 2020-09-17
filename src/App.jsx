@@ -17,6 +17,8 @@ class App extends Component {
     return (
       <>
         <InputFields onChangeHandler={this.onChangeHandler} />
+        <button id="login">Login</button>
+        <LoginForm />
         <DisplayCooperResult
           distance={this.state.distance}
           gender={this.state.gender}
