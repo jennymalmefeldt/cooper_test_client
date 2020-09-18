@@ -1,4 +1,6 @@
-describe("Cooper client calulates successfully", () => {
+/// <reference types="Cypress" />
+
+describe("Cooper Client calulates successfully", () => {
   it("calculates cooper performance", () => {
     cy.visit("/");
     cy.get("input#distance").type("1000");

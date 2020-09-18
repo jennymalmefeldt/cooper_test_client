@@ -18,7 +18,7 @@ class App extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  OnLogin = async e => {
+  onLogin = async e => {
     e.preventDefault();
     const response = await authenticate(
       e.target.email.value,
