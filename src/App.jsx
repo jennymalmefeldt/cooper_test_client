@@ -34,7 +34,7 @@ class App extends Component {
   render() {
     const { renderLoginForm, authenticated, message } = this.state;
     let renderLogin;
-    switch(true) {
+    switch (true) {
       case renderLoginForm && !authenticated:
         renderLogin = <LoginForm submitFormHandler={this.onLogin} />;
         break;
@@ -53,7 +53,9 @@ class App extends Component {
         break;
       case authenticated:
         renderLogin = (
-          <p id="message" >Hi {JSON.parse(sessionStorage.getItem("credentials")).uid}</p>
+          <p id="message" >
+            Hi {JSON.parse(sessionStorage.getItem("credentials")).uid}
+          </p>
         );
         break;
     }
