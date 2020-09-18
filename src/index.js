@@ -6,11 +6,11 @@ import axios from "axios";
 
 let apiUrl;
 if (process.env.NODE_ENV === "production") {
-  apiUrl = "https://cr-cooper-api.herokuapp.com/api/vi"
+  apiUrl = "https://cr-cooper-api.herokuapp.com/api/v1"
 } else {
   apiUrl = "http:/localhost:3000/api/v1";
 }
-axios.defaults.baseURL = apiUrl
+axios.defaults.baseURL = apiUrl;
 
 ReactDOM.render(<App />, document.getElementById("root"));
 
