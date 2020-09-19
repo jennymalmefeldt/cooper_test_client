@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from "react"
 import DisplayCooperResult from "./components/DisplayCooperResult";
 import InputFields from "./components/InputFields";
 import LoginForm from "./components/LoginForm";
@@ -14,6 +14,7 @@ class App extends Component {
     authenticated: false,
     message: "",
     entrySaved: false
+
   };
 
   onChangeHandler = e => {
@@ -78,10 +79,24 @@ class App extends Component {
       break;
     }
 
+
+    const renderLogin = this.state.renderLoginForm ? (
+      <LoginForm submitFormHandler={this.onLogin} />
+    ) : (
+      <button
+        id="login"
+        onClick={() => this.setState({ renderLoginForm: true })}
+      >
+        Login
+      </button>
+      
+    );
+
     return (
       <>
         <InputFields onChangeHandler={this.onChangeHandler} />
-        { renderLogin }
+        {renderLogin}
+
         <DisplayCooperResult
           distance={this.state.distance}
           gender={this.state.gender}
@@ -95,5 +110,4 @@ class App extends Component {
     );
   }
 }
-
 export default App;
