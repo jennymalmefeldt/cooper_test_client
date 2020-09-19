@@ -15,7 +15,23 @@ const DisplayCooperResult = ({ distance, gender, age }) => {
           <p id="cooper-message">
           {age} y/o {gender} running {distance} meters.
           </p>
-          <p id="cooper-result">Result: {calculate()}</p>
+          <p id="cooper-result">Result: {result}</p>
+          {authenticated && !entrySaved ? (
+            <button
+              id="save-result"
+              onClick={() => saveData(
+                result,
+                age,
+                distance,
+                gender,
+                entryHandler
+              )}
+            >
+              Save entry
+            </button>
+          ) : (
+            <p id="response-message">Your entry was saved</p>
+          )}
         </>
       )}
     </>
